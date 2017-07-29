@@ -2,6 +2,7 @@ package com.student.demo.dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,6 +14,10 @@ import com.student.demo.pojo.UserRoleMapping;
 
 @Repository
 public class RoleDao {
+	
+	Logger logger = Logger.getLogger(RoleDao.class);
+	
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -60,7 +65,7 @@ public class RoleDao {
 			
 			
 		}catch(Exception e){
-			e.printStackTrace();
+			logger.error("Error in findMenusByRoleId ",e);
 			
 			return null;
 			

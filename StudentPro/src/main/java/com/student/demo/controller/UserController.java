@@ -43,7 +43,7 @@ public class UserController {
 		
 		
 		User user = new User();
-		user.setName("RAjib");
+		user.setName("Dipankar");
 		
 		model.addAttribute("user", user);
 		
